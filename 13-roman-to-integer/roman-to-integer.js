@@ -9,16 +9,10 @@ var romanToInt = function(s) {
     let a = s.split('')
 let sum = 0
 for(let i=0;i<a.length;i++){
-    // sum += obj[a[i]]
-    if(a[i+1]=="M" && a[i] == "C" ||a[i]=="C" && a[i+1]=="D"){
-        sum += obj[a[i+1]]-obj[a[i]];
-        a.shift(a[i+1])
-    }else if(a[i+1]=="L" && a[i] == "X" ||a[i]=="X" && a[i+1]=="C"){
-        sum += obj[a[i+1]]-obj[a[i]]
-        a.shift(a[i+1])
-    }else if(a[i+1]=="X" && a[i] == "I" ||a[i]=="I" && a[i+1]=="V"){
-        sum += obj[a[i+1]]-obj[a[i]]
-        a.shift(a[i+1])
-    }else sum += obj[a[i]]
+    let current = obj[a[i]]
+    let next = obj[a[i+1]]
+    if(current < next){
+        sum -= current
+    }else sum += current
 }return sum
 };
