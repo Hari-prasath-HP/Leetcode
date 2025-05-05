@@ -3,14 +3,14 @@
  * @return {boolean}
  */
 var areOccurrencesEqual = function(s) {
-    let a = s.split('')
 let obj = {}
-for(let val of a){
+for(let val of s){
     if(obj[val]){
-        obj[val] ++
+        obj[val] += 1
     }else obj[val] = 1
 }
-let values = Object.values(obj)
-let istrue = values.every(val => val === values[0])
-return istrue
+let istrue = false
+let a = Object.values(obj)
+
+return a.every(v=>v==a[0])
 };
