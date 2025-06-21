@@ -15,7 +15,7 @@ var kthSmallest = function(root, k) {
     let count = 0
     let result = null
     function reverse(node){
-        if(!node || result !== null){return}
+        if(!node){return}
         reverse(node.left)
         count++
         if(count == k){
