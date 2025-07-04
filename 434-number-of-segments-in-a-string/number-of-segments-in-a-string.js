@@ -3,7 +3,6 @@
  * @return {number}
  */
 var countSegments = function(s) {
-let res = 0
 let arr = s.split(' ').filter((a)=> a!=='')
 return arr.length
 };
