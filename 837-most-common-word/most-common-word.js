@@ -6,17 +6,19 @@
 var mostCommonWord = function(paragraph, banned) {
     let words = paragraph.toLowerCase().match(/\w+/g)
 let obj = {}
-for(let char of words){
-    if(!banned.includes(char)){
-        obj[char] = (obj[char]||0)+1
+for(let i=0;i<words.length;i++){
+    if(!banned.includes(words[i])){
+        if(obj[words[i]]){
+            obj[words[i]]++
+        }else obj[words[i]] = 1
     }
 }
-let maxcount = 0
-let res = ""
-for(let word in obj){
-    if(obj[word]>maxcount){
-        maxcount = obj[word]
-        res = word
+let max = 0
+let res = ''
+for(let char in obj){
+    if(obj[char]>max){
+        max = obj[char]
+        res = char
     }
 }return res
 };
