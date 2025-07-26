@@ -8,6 +8,7 @@ let arr = []
 for(let i=0;i<nums.length;i+=2){
     let minAlice = sort[i]
     let minBob = sort[i+1]
-    arr.push(minBob,minAlice)
+    arr.push(minBob)
+    arr.push(minAlice)
 }return arr
 };
