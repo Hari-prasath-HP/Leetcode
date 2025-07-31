@@ -4,7 +4,6 @@
  */
 var longestCommonPrefix = function(strs) {
     strs.sort()
-let prefix = ''
 let first = strs[0]
 let last = strs[strs.length-1]
 let res = ''
