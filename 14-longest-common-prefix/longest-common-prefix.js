@@ -4,15 +4,15 @@
  */
 var longestCommonPrefix = function(strs) {
     strs.sort()
-    let a = strs[0]
-    let b = strs[strs.length - 1]
-    let c = ''
-    for(let i = 0; i < a.length; i++){
-        if(a[i] == b[i]){
-            c += a[i]
-        }else{
-            break
-        }
+let prefix = ''
+let first = strs[0]
+let last = strs[strs.length-1]
+let res = ''
+for(let i=0;i<first.length;i++){
+    if(first[i]===last[i]){
+        res+=first[i]
+    }else{
+        break
     }
-    return c
+}return res
 };
