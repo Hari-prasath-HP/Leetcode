@@ -4,19 +4,19 @@
  * @return {number}
  */
 var countCharacters = function(words, chars) {
-    let charcount = {}
-for(let ch of chars){
-    charcount[ch] = (charcount[ch] || 0)+1
-}
+let char = {}
 let res = []
+for(let val of chars){
+    char[val] = (char[val] || 0) +1
+}
 for(let word of words){
-    let wordcount = {}
-    for(let ch of word){
-        wordcount[ch] = (wordcount[ch] ||0 )+1
+    let queue = {}
+    for(let val of word){
+        queue[val] = (queue[val] || 0) +1
     }
     let check = true
-    for(let ch of word){
-        if(!charcount[ch] || wordcount[ch] > charcount[ch]){
+    for(let key of word){
+        if(!char[key] || queue[key] > char[key]){
             check = false
             break
         }
