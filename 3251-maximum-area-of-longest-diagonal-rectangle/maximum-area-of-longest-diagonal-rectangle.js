@@ -3,16 +3,16 @@
  * @return {number}
  */
 var areaOfMaxDiagonal = function(dimensions) {
-let d = 0
-let a = 0
-let l = 0
-let w = 1
+let dimension = 0
+let area = 0
+let len = 0
+let wid = 1
 for(let val of dimensions){
-    let b = Math.sqrt(((val[l]**2)+(val[w]**2)))
-    let c = val[l]*val[w]
-    if(d<b||((b==d)&&(c>=a))){
-        d=b
-        a=c
+    let currdia = Math.sqrt(((val[len]**2)+(val[wid]**2)))
+    let currarea = val[len]*val[wid]
+    if(dimension<currdia||((currdia==dimension)&&(currarea>=area))){
+        dimension=currdia
+        area=currarea
     }
-}return a
+}return area
 };
